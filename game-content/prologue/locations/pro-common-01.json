@@ -1,0 +1,26 @@
+{
+  "id": "pro-common-01",
+  "name": "Darkness",
+  "type": "EXPLORATION",
+  "descriptionFile": "pro-common-01.txt",
+  "actions": [
+    {
+      "id": "take_sword",
+      "text": "Взять брусок металла, я вижу в нём отзвук неродившихся битв.",
+      "set_class": "WARRIOR",
+      "nextLocationId": "pro-warrior-01"
+    },
+    {
+      "id": "take_book",
+      "text": "Взять пустую книгу с пером, я слышу в ней шёпот тайн.",
+      "set_class": "WIZARD",
+      "nextLocationId": "pro-wizard-01"
+    },
+    {
+      "id": "take_key",
+      "text": "Взять заготовку ключа, что откроет любую дверь.",
+      "set_class": "ROGUE",
+      "nextLocationId": "pro-rogue-01"
+    }
+  ]
+}
