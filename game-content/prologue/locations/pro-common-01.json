@@ -7,20 +7,26 @@
     {
       "id": "take_sword",
       "text": "Взять брусок металла, я вижу в нём отзвук неродившихся битв.",
-      "set_class": "WARRIOR",
-      "nextLocationId": "pro-warrior-01"
+      "nextLocationId": "pro-warrior-01",
+      "effects": {
+        "set_class": "WARRIOR"
+      }
     },
     {
       "id": "take_book",
       "text": "Взять пустую книгу с пером, я слышу в ней шёпот тайн.",
-      "set_class": "WIZARD",
-      "nextLocationId": "pro-wizard-01"
+      "nextLocationId": "pro-wizard-01",
+      "effects": {
+        "set_class": "WIZARD"
+      }
     },
     {
       "id": "take_key",
       "text": "Взять заготовку ключа, что откроет любую дверь.",
-      "set_class": "ROGUE",
-      "nextLocationId": "pro-rogue-01"
+      "nextLocationId": "pro-rogue-01",
+      "effects": {
+        "set_class": "ROGUE"
+      }
     }
   ]
 }
