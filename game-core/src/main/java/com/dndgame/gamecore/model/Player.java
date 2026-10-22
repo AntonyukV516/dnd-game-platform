@@ -14,7 +14,7 @@ public class Player {
     private String name;
     private CharacterClass characterClass;
     private Origin origin;
-    private String race;
+    private Race race;
     private int hp;
     private int level;
     private String currentLocationId;
