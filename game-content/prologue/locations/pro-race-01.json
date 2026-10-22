@@ -1,0 +1,32 @@
+{
+  "id": "pro-race-01",
+  "name": "Выбор расы",
+  "type": "EXPLORATION",
+  "descriptionFile": "pro-race-01.txt",
+  "actions": [
+    {
+      "id": "choose_human",
+      "text": "Человек",
+      "nextLocationId": "pro-combat-01",
+      "effects": { "set_race": "HUMAN" }
+    },
+    {
+      "id": "choose_elf",
+      "text": "Эльф",
+      "nextLocationId": "pro-combat-01",
+      "effects": { "set_race": "ELF" }
+    },
+    {
+      "id": "choose_dwarf",
+      "text": "Дварф",
+      "nextLocationId": "pro-combat-01",
+      "effects": { "set_race": "DWARF" }
+    },
+    {
+      "id": "choose_halfling",
+      "text": "Полурослик",
+      "nextLocationId": "pro-combat-01",
+      "effects": { "set_race": "HALFLING" }
+    }
+  ]
+}

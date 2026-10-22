@@ -2,10 +2,7 @@ package com.dndgame.gamecore.service;
 
 import com.dndgame.gamecore.dto.ActionRequestDto;
 import com.dndgame.gamecore.dto.ActionResponseDto;
-import com.dndgame.gamecore.model.Action;
-import com.dndgame.gamecore.model.CharacterClass;
-import com.dndgame.gamecore.model.Origin;
-import com.dndgame.gamecore.model.Player;
+import com.dndgame.gamecore.model.*;
 import com.dndgame.gamecore.repository.PlayerStore;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -39,9 +36,14 @@ public class GameCore {
             player.setCharacterClass(CharacterClass.valueOf(
                     (String) action.getEffects().get("set_class")));
         }
+
         if (action.getEffects().containsKey("set_origin")) {
             player.setOrigin(Origin.valueOf(
                     (String) action.getEffects().get("set_origin")));
+        }
+
+        if (action.getEffects().containsKey("set_race")) {
+            player.setRace(Race.valueOf((String) action.getEffects().get("set_race")));
         }
     }
 }
