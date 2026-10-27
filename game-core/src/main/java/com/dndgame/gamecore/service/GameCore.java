@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 public class GameCore {
     private final LocationService locationService;
     private final PlayerStore playerStore;
+    private final StatsCalculator statsCalculator;
 
     public ActionResponseDto processAction(ActionRequestDto request) {
         var player = playerStore.getOrCreate(request.getPlayerId());
@@ -44,6 +45,7 @@ public class GameCore {
 
         if (action.getEffects().containsKey("set_race")) {
             player.setRace(Race.valueOf((String) action.getEffects().get("set_race")));
+            statsCalculator.applyStats(player);
         }
     }
 }
