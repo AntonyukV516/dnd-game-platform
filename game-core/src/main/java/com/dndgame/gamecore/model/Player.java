@@ -12,6 +12,8 @@ import lombok.NoArgsConstructor;
 public class Player {
     private String id;
     private String name;
+    private String partyId;
+
     private CharacterClass characterClass;
     private Origin origin;
     private Race race;
@@ -34,4 +36,9 @@ public class Player {
     public int getIntModifier() { return (intelligence- 10) / 2; }
     public int getWisModifier() { return (wisdom - 10) / 2; }
     public int getChaModifier() { return (charisma - 10) / 2; }
+
+    public int getAc() {
+        return 10 + getDexModifier();
+    }
+
 }
