@@ -7,9 +7,10 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
-public class PlayerStore {
+public class PlayerStore implements PlayerRepository {
     private final Map<String, Player> players = new ConcurrentHashMap<>();
 
+    @Override
     public Player getOrCreate(String playerId) {
         return players.computeIfAbsent(playerId, id -> {
             Player player = Player.builder()
@@ -22,6 +23,7 @@ public class PlayerStore {
         });
     }
 
+    @Override
     public Player get(String playerId) {
         return players.get(playerId);
     }
