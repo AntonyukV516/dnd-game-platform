@@ -3,7 +3,7 @@ package com.dndgame.gamecore.service;
 import com.dndgame.gamecore.dto.ActionRequestDto;
 import com.dndgame.gamecore.dto.ActionResponseDto;
 import com.dndgame.gamecore.model.*;
-import com.dndgame.gamecore.repository.PlayerStore;
+import com.dndgame.gamecore.repository.PlayerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,11 +11,11 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class GameCore {
     private final LocationService locationService;
-    private final PlayerStore playerStore;
+    private final PlayerRepository playerRepository;
     private final StatsCalculator statsCalculator;
 
     public ActionResponseDto processAction(ActionRequestDto request) {
-        var player = playerStore.getOrCreate(request.getPlayerId());
+        var player = playerRepository.getOrCreate(request.getPlayerId());
         var location = locationService.loadLocation(player.getCurrentLocationId());
 
         if (request.getActionId() == null || request.getActionId().isBlank()) {
